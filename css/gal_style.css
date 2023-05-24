@@ -1,0 +1,123 @@
+* {
+    text-decoration: none;
+    list-style: none;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+header {
+    width: 100%;
+    height: 300px;
+    font-size: 20px;
+    color: white;
+}
+ul {
+    height: 60px;
+}
+ul li:nth-child(1) {
+    margin-left: 1100px;
+}
+.nav {
+    display: flex;
+    z-index: 10;
+}
+.nav li {
+    margin-left: 30px;
+}
+.nav, .logo {
+    margin-top: 28px;
+}
+ .nav li a {
+    color: white;
+}
+.nav span {
+    border-left: 1px solid white;
+    height: 30px;
+    margin-left: 29px;
+}
+.header_shadow {
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    background-color: black;
+    opacity: 0.7;
+}
+.logo {
+    z-index: 10;
+}
+.background_image img {
+    margin-left: 15%;
+    width: 70%;
+    height: 80vh;
+}
+.visual {
+    border-bottom: darkgray solid 2px;
+}
+.section input[id*="slide"] {
+    display: none;
+}
+.section .slidewrap {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.section .slidelist {
+    white-space: nowrap;
+    font-size: 0;
+}
+.section .slidelist > li {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: 3s;
+}
+.section .slidelist > li > a {
+    display: block;
+    position: relative;
+}
+.section .slidelist > li > a img {
+    width: 100%;
+}
+.section .slidelist label {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    cursor: pointer;
+}
+.section .slidelist .left {
+    left: 30px;
+    background: url("/imgfile/left.png") center center / 100% no-repeat;
+}
+.section .slidelist .right {
+    left: 1476px;
+    background: url("/imgfile/right.png") center center / 100% no-repeat;
+}
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > li {
+    transform: translateX(0%);
+}
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > .l02,
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > .l03,
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > .r02,
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > .r03 {
+    visibility: hidden;
+}
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > li {
+    transform: translateX(-100%);
+}
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > .l01,
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > .l03,
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > .r01,
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > .r03 {
+    visibility: hidden;
+}
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > li {
+    transform: translateX(-200%);
+}
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > .l01,
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > .l02,
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > .r01,
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > .r02 {
+    visibility: hidden;
+}
