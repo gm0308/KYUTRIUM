@@ -69,8 +69,46 @@
         </div>
     </header>
     <div class="container">
+        <div class="content">
+            <div class="artwork">
+                <img src="" alt="">
+                <h5></h5>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
     </div>
     <footer>
     </footer>
 </body>
 </html>
+
+<script type="text/javascript" src="/html/artworks.json">
+
+    var parseData = JSON.parse(JSON.stringify(Params));
+
+    function mainList() {
+        $('.artwork').remove()
+        datas.forEach(Params => {
+
+            let clone = main_list.clone()
+
+            // 클론 내용 수정
+            clone
+                .find('img')
+                .attr('src', '/images/' + Params.photo)
+            clone
+                .find('h5')
+                .html(Params.title.htmlEncode())
+            clone
+                .find('p')
+                .eq(0)
+                .html(Params.explanation.htmlEncode())
+            // 추가
+            $('.artwork').append(clone)
+        })
+}
+</script>
+
+
+

@@ -1,0 +1,17 @@
+Params = {
+    "photo": "first.png",
+    "title": "첫번째",
+    "explanation": "이 것은 첫번째"
+}, {
+    "photo": "second.png",
+    "title": "첫번째",
+    "explanation": "이 것은 두번째"
+}, {
+    "photo": "third.png",
+    "title": "첫번째",
+    "explanation": "이 것은 세번째"
+}, {
+    "photo": "sadcat.png",
+    "title": "슬픈 고양이",
+    "explanation": "이 것은 슬픈 바나나의 하루."
+}
