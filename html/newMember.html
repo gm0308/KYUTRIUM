@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/login.js"></script>
+    <script src="/login.js">
+        link = '/html/login.html';
+    </script>
     <title>artrium</title>
     <style>
         input {
@@ -40,23 +43,20 @@
             color: black;
             cursor: pointer;
         }
-        img {
-            width: 80px;
-            float: left;
-            cursor: pointer;
-        }
+        
     </style>
 </head>
 <body>
     <div>
-        <img src="/images/sadcat.png" alt="logo" > 
-        <form action="#" method="get">
-            <input type="text" name="ID" id="id" placeholder="아이디를 입력해주세요" required><br>
-            <input type="password" name="PW" id="pwd" placeholder="비밀번호를 입력해주세요" required><br>
-            <input type="submit" value="로그인" id="sub">
+        <h1>회원가입</h1>
+        <form action="#" method="get" onsubmit="return check();">
+            <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요" required><br>
+            <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요" required><br>
+            <input type="password" name="pwCheck" id="pwCheck" placeholder="비밀번호 재확인" required > <br>
+            <input type="submit" value="회원가입" id="sub">
         </form>
-        <hr style="margin: 20px 0 20px 0;">
-        <a href="/html/newMember.html"><p style="text-align: right;">혹시 계정이 없으신가요</p></a>
+        <hr>
+        <a href="/html/login.html"><p style="text-align: right;">로그인화면으로 돌아가기</p></a>
     </div>
 </body>
 </html>
