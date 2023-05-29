@@ -1,4 +1,3 @@
-
 // 회원가입 양식
 function check() {
     var id = document.getElementById("id");
@@ -21,4 +20,3 @@ function check() {
         alert("로그인 되었습니다.") 
     }
 }
-
