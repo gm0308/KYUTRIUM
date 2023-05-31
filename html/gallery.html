@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>moon's atrium</title>
+    <title>atrium</title>
     <link rel="stylesheet" href="/css/gal_style.css">
     <link rel="stylesheet" href="/css/unity_style.css">
 </head>
@@ -19,7 +19,7 @@
                 <span id="nav_liner"></span>
                 <li><a href="/html/about.html">About</a></li>
                 <span id="nav_liner"></span>
-                <li><a href="/html/suport.html">Suport</a></li>
+                <li><a href="/html/suport.html">Support</a></li>
                 <span id="nav_liner"></span>
                 <li><a href="/html/contact.html">Contact</a></li>
                 <span id="nav_liner"></span>
@@ -75,11 +75,10 @@
     </header>
     <div class="container">
         <div class="content">
-            <div class="artwork">
-                <img src="" alt="">
-                <h5></h5>
-                <p></p>
-                <p></p>
+            <div>
+                <img src="" alt="" id="photo">
+                <h5 id="title"></h5>
+                <p id="explanation"></p>
             </div>
         </div>
     </div>
@@ -90,29 +89,46 @@
 
 <script type="text/javascript" src="/html/artworks.json">
 
-    var parseData = JSON.parse(JSON.stringify(Params));
+    let xhttp = new XMLHttpRequest();
 
-    function mainList() {
-        $('.artwork').remove()
-        datas.forEach(Params => {
+    xhttp.onreadystatechange = function () {
+	    if(xhttp.readyState == 4 && xhttp.status == 200){
+		    jsonfunc(this.responseText); //this = xhttp
+    //		jsonfunc(xhttp.responseText); // 둘다 가능
+	    }
+    }
+    xhttp.open("GET","artworks.json", true);
+    xhttp.send();
 
-            let clone = main_list.clone()
+    function jsonfunc( Params ) {
 
-            // 클론 내용 수정
-            clone
-                .find('img')
-                .attr('src', '/images/' + Params.photo)
-            clone
-                .find('h5')
-                .html(Params.title.htmlEncode())
-            clone
-                .find('p')
-                .eq(0)
-                .html(Params.explanation.htmlEncode())
-            // 추가
-            $('.artwork').append(clone)
-        })
-}
+	    let json = JSON.parse(JSON.stringify(Params)); // String -> json으로 변환
+	
+	    let photo = "";
+        let title = "";
+        let explanation = "";
+
+        var test_p = document.getElementById("photo");
+        var test_t = document.getElementById("title");
+        var test_e = document.getElementById("explanation");
+        
+        // 접근법 2
+	    for(i=0; i<json.length; i++){
+            photo = json[i].photo;
+            title = json[i].title;
+            explanation = json[i].explanation; 
+
+            console.log(Params.photo);
+            console.log(Params.title);
+            console.log(Params.explanation);
+            document.getelemaentById("photo").innerHTML="/images/" + Params.photo + ".png";
+            document.getelemaentById("title").innerHTML=Params.title;
+            document.getelemaentById("explanation").innerHTML=Params.explanation;
+	    }
+    }
+
+    jsonfunc();
+
 </script>
 
 
