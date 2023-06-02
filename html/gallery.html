@@ -75,10 +75,8 @@
     </header>
     <div class="container">
         <div class="content">
-            <div>
-                <img src="" alt="" id="photo">
-                <h5 id="title"></h5>
-                <p id="explanation"></p>
+            <div id="artworks">
+
             </div>
         </div>
     </div>
@@ -87,48 +85,41 @@
 </body>
 </html>
 
-<script type="text/javascript" src="/html/artworks.json">
+<script type="text/javascript">
 
-    let xhttp = new XMLHttpRequest();
+let xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function () {
-	    if(xhttp.readyState == 4 && xhttp.status == 200){
-		    jsonfunc(this.responseText); //this = xhttp
-    //		jsonfunc(xhttp.responseText); // 둘다 가능
-	    }
-    }
-    xhttp.open("GET","artworks.json", true);
-    xhttp.send();
+xhttp.onreadystatechange = function () {
+	if(xhttp.readyState == 4 && xhttp.status == 200){
+		jsonfunc(this.responseText); //this = xhttp
+//		jsonfunc(xhttp.responseText); // 둘다 가능
+	}
+}
+xhttp.open("GET","artworks.json", true);
+xhttp.send();
 
-    function jsonfunc( Params ) {
+function jsonfunc( jsonText ) {
 
-	    let json = JSON.parse(JSON.stringify(Params)); // String -> json으로 변환
+	let json = JSON.parse(jsonText); // String -> json으로 변환
 	
-	    let photo = "";
-        let title = "";
-        let explanation = "";
+    let photo = [4];
+    let title = [4];
+    let explanation = [4];
 
-        var test_p = document.getElementById("photo");
-        var test_t = document.getElementById("title");
-        var test_e = document.getElementById("explanation");
-        
-        // 접근법 2
-	    for(i=0; i<json.length; i++){
-            photo = json[i].photo;
-            title = json[i].title;
-            explanation = json[i].explanation; 
-
-            console.log(Params.photo);
-            console.log(Params.title);
-            console.log(Params.explanation);
-            document.getelemaentById("photo").innerHTML="/images/" + Params.photo + ".png";
-            document.getelemaentById("title").innerHTML=Params.title;
-            document.getelemaentById("explanation").innerHTML=Params.explanation;
-	    }
-    }
-
-    jsonfunc();
-
+	// 접근법 1
+	for(i=0; i<json.length; i++){
+		for(key in json[i]){ // key값 가져오기
+			photo[i] = json.photo[key];
+            title[i] = json.title[key];
+            explanation[i] = json.explanation[key];
+   
+            document.getElementById('artworks').innerHTML = 
+            '<img src="/images/' + photo[i] + '" alt="artwork" id="photo">'
+            + '<h5 id="title">' + title[i] + '</h5>'
+            + '<p id="explanation">' + explanation[i] + '</p>';
+		}
+	}
+}
 </script>
 
 

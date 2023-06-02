@@ -1,4 +1,4 @@
-Params = {
+[ {
     "photo": "first.png",
     "title": "첫번째",
     "explanation": "이 것은 첫번째"
@@ -15,3 +15,4 @@ Params = {
     "title": "슬픈 고양이",
     "explanation": "이 것은 슬픈 바나나의 하루."
 }
+]
