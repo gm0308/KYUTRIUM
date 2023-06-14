@@ -5,6 +5,12 @@ header {
     width: 100%;
     height: 2000px;
     background-color: aliceblue;
+    padding-top: 50px;
+}
+.container h1 {
+    padding-bottom: 50px;
+    text-align: center;
+    font-family: "Orbit-Regular";
 }
 .content {
     display: flex;
