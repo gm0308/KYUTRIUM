@@ -11,4 +11,23 @@
     position: relative;
     color: black;
 }
+header {
+    height: 890px !important;
+}
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+}
+#leftFoot {
+    margin: 1%;
+    margin-right: 20%;
+}
+#centerFoot {
+    margin: 1%;
+    margin-right: 20%;
+}
+#rightFoot {
+    margin: 1%;
+}
 
