@@ -5,36 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/login.js"></script>
-    <title>artrium</title>
     <link rel="stylesheet" href="/css/unity_style.css">
+    <title>artrium</title>
     <style>
-        * {
-            font-family: "Orbit-Regular";
-            font-size: 1em;
-        }
         input {
-            width: 390px;
+            width: 400px;
             height: 40px;
             border-radius: 10px;
             border: 1px solid black;
-            margin-top: 20px;  
-            padding-left: 10px;          
-        }
-        div {
-            margin-top: 80px;
-            display: inline-block;
+            margin-top: 20px;            
         }
         body {
             text-align: center;
-        }
-        a {
-            font-size: 13px;
-            color: black;
-            text-decoration: none;
-        }
-        a:hover {
-            color: rgb(51,102,197);
-            cursor: pointer;
         }
         #sub {
             color: white;
@@ -51,18 +33,43 @@
             float: left;
             cursor: pointer;
         }
+        .A {
+            color: black;
+            font-size: 13px;
+        }
+        .contain {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-    <div>
-        <img src="/images/sadcat.png" alt="logo" > 
-        <form action="#" method="get" onsubmit="return check();">
+    <header>
+        <div class="head" style="display: flex;">
+            <a class="logo" href="" >artrium</a>
+            <ul class="nav">
+                <li><a href="/html/main.html">Home</a></li>
+                <span id="nav_liner"></span>
+                <li><a href="/html/gallery.html">Gallery</a></li>
+                <span id="nav_liner"></span>
+                <li><a href="/html/login.html">login</a></li>
+                <span id="nav_liner"></span>
+                <button class="my-btn my-btn-class-47" type="button" onclick="location.href='painting.html'">
+                    <span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        
+                    </span>
+                </button>
+            </ul>
+        </div>
+    </header>
+    <div class="contain">
+        <form action="#" method="get">
+            <h1>로그인</h1>
             <input type="text" name="ID" id="id" placeholder="아이디를 입력해주세요" required><br>
             <input type="password" name="PW" id="pwd" placeholder="비밀번호를 입력해주세요" required><br>
             <input type="submit" value="로그인" id="sub">
         </form>
         <hr style="margin: 20px 0 20px 0;">
-        <a href="/html/newMember.html"><p style="text-align: right;">혹시 계정이 없으신가요</p></a>
+        <a href="/html/newMember.html" class="A"><p style="text-align: right;">혹시 계정이 없으신가요</p></a>
     </div>
 </body>
 </html>
