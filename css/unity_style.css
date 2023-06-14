@@ -84,7 +84,8 @@ a {
     content: "Time to painting"; 
     position: absolute;
     z-index: -1; 
-    transition: all 0.3s ease 0s; 
+    transition: all 0.3s ease 0s;
+    padding-left: 12px;
 }
 .my-btn-class-47 span { 
     display: inline-block;
