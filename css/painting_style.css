@@ -3,6 +3,10 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans';
 }
 
+.nav #nav_liner {
+  margin-left: 450px !important;
+}
+
 .container {
     width: 100%;
     display: flex;
