@@ -6,6 +6,7 @@ const colorEl = document.getElementById("color");
 const clearEl = document.getElementById("clear");
 
 const ctx = canvas.getContext("2d");
+const $canvas = document.querySelector("canvas");
 
 let size = 10;
 let isPressed = false;
@@ -13,6 +14,19 @@ colorEl.value = "black";
 let color = colorEl.value;
 let x;
 let y;
+
+const download = () => {
+  const $link = document.createElement("a");
+  
+  $link.download = "canvas.png";
+  $link.href = $canvas.toDataURL("image/png");
+  
+  $link.click();
+}
+
+document.querySelector(".download").onclick = () => {
+  download();
+}
 
 canvas.addEventListener("mousedown", (e) => {
   isPressed = true;

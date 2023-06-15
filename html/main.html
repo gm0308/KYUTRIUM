@@ -12,12 +12,10 @@
     <header>
         <div class="head" style="display: flex;">
             <a class="logo" href="">
-                <img src="/images/artrium.png" alt="logo">
+                <p id="title">KYU<span>TRIUM</span></p>
+                <p id="explan">Make The Future<p>
             </a>
             <ul class="nav">
-                <li><a href="">Home</a></li>
-                <span id="nav_liner"></span>
-                <li><a href="/html/gallery.html">Gallery</a></li>
                 <span id="nav_liner"></span>
                 <li><a href="/html/login.html">Log in</a></li>
                 <button class="my-btn my-btn-class-47" type="button" onclick="location.href='painting.html'">
@@ -29,11 +27,77 @@
         </div>
         <div class="background_image">
             <video src="/images/istockphoto-1341268434-640_adpp_is.mp4" loop autoplay></video>
-            <div>
-                <h1>artrium</h1>
-            </div>
+            <div id="background_shadow"></div>
+            <p id="b_explan"><span id="b_explan_h">미래</span>를 만들고 저장하세요<br>    
+            이 곳에선 <span id="b_explan_h">당신의 세계</span>를 창조하며 기록합니다<br>
+            <span id="b_explan_h">다른 세상</span>에서 영감을 얻으세요<br>
+            The Kyutrium</p>
         </div>
     </header>
+    <h1 id="visual_h1">&lt;<span id="visual_span"> Today's</span> artworks &gt;</h1>
+    <div class="visual">
+        <div class="section">
+            <input type="radio" name="slide" id="slide01">
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <div class="slidewrap">
+                <ul class="slidelist">
+                    <label for="slide03" class="left l01"></label>
+                    <label for="slide02" class="right r01"></label>
+                    <label for="slide01" class="left l02"></label>
+                    <label for="slide03" class="right r02"></label>
+                    <label for="slide02" class="left l03"></label>
+                    <label for="slide01" class="right r03"></label>
+                    <li class="first_screen screen">
+                        <a href="#">
+                            <img
+                                src="/images/sob.png" alt="The sob">
+                        </a>
+                    </li>
+                    <li class="second_screen screen">
+                        <a href="#">
+                            <img
+                                src="/images/KBS.png" alt="The KBS">
+                        </a>
+                    </li>
+                    <li class="third_screen screen">
+                        <a href="#">
+                            <img
+                                src="/images/sadcat.png"
+                                alt="The third">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1 id="visual_h1">&lt; 전시 작품 &gt;</h1>
+    <div class="container">
+        <div class="content">
+            <div id="artworks">
+                <img src="/images/falling_the_moon.png" alt="artwork_01">
+                <h4>Falling The Moon</h4>
+                <p>Night dancer is feel blue, but he know...</p>
+            </div>
+            <div id="artworks">
+                <img src="/images/sob.png" alt="artwork_02">
+                <h4>S.O.B</h4>
+                <p>Son of b......</p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="artworks">
+                <img src="/images/sadcat.png" alt="artwork_03">
+                <h4>Sad cat</h4>
+                <p>This is banana ... in the sadly cat.</p>
+            </div>
+            <div id="artworks">
+                <img src="/images/KBS.png" alt="artwork_04">
+                <h4>KBS</h4>
+                <p>Kyu is boong sin sakki!</p>
+            </div>
+        </div>
+    </div>
     <footer>
         <div id="leftFoot">
             <span id="l_highlight">Atrium</span>
